@@ -1,0 +1,35 @@
+Notes:
+
+Board 7 columns, 6 rows
+
+
+
+
+for player in players:
+    for square in board: (can optimize for not going to edge)
+        if color == square == square(col+1) == square(col+2) == square(col+3):
+            return color
+        check next 3 diag right
+        check next 3 up
+        check next 3 diag left
+    
+
+
+
+Questions:
+do I want to use python error handling?
+
+
+
+
+
+
+
+
+use @property to make board state a property in the Board class that players can access via getter/setter functions that check for a valid move and make the necessary modifications to the board.
+use itertools cycle for players
+use dictionary to associate player with id and name etc 
+
+
+
+everything is going to be taken over by machine learning ai . . . 
