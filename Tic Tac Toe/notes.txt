@@ -1,5 +1,7 @@
 Notes:
 
+new note
+
 Board 7 columns, 6 rows
 
 
