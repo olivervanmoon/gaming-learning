@@ -21,8 +21,8 @@ class Player:
 				continue
 			except Exception as err:
 				print('You fucked up.')
-				print(type(err))
-				print(err)
+				#print(type(err))
+				#print(err)
 				traceback.print_stack()
 				continue
 		return position

@@ -1,4 +1,48 @@
-Notes:
+Notes
+
+To do:
+put board in game
+make a log file
+make human and computer player subclasses
+
+implement computer players: perfect, learning
+
+
+
+
+Learned:
+
+git highest level directory: git rev-parse --show-toplevel
+
+add all known files git add -A (captial A)
+commit all known files: git commit -a
+
+traceback.print_stack()
+
+To Check Out:
+what is git reset?
+python logging module
+python libraries for (game) machine learning, GANs
+game trees and minimax alg?
+static methods
+
+
+Questions:
+do I want to use python error handling?
+
+Ideas:
+
+use @property to make board state a property in the Board class that players can access via getter/setter functions that check for a valid move and make the necessary modifications to the board.
+use itertools cycle for players
+use dictionary to associate player with id and name etc 
+
+
+
+
+
+
+
+
 
 Connect 4:
 Board 7 columns, 6 rows
@@ -11,20 +55,11 @@ for player in players:
         check next 3 up
         check next 3 diag left
     
-Questions:
-do I want to use python error handling?
 
 
 
 
 
-use @property to make board state a property in the Board class that players can access via getter/setter functions that check for a valid move and make the necessary modifications to the board.
-use itertools cycle for players
-use dictionary to associate player with id and name etc 
 
-git rev-parse --show-toplevel
 
-add all known files git add -A (captial A)
-commit all known files: git commit -a
 
-what is git reset?

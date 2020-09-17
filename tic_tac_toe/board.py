@@ -13,7 +13,8 @@ class Board:
 			coordinate = self.parseInput(position)
 			self.grid[coordinate] = player.symbol #coordinate is (row, col)
 
-	def parseInput(self, position):
+	@staticmethod
+	def parseInput(position):
 		if position == 1:
 			return (0,0)
 		if position == 2:
