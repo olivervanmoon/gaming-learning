@@ -3,12 +3,10 @@ from itertools import cycle
 class Game:
 	def __init__(self, players):
 		self.ply = 0
+		
 		self.players = players
 		self.playerCycle = cycle(self.players)
 		self.currentPlayer = next(self.playerCycle)
-
-		print('player1 id according to game self.players is: ')
-		print(id(self.players[0]))
 
 		self.startMessage()
 
@@ -17,14 +15,13 @@ class Game:
 
 	def startMessage(self):
 		for player in self.players:
-			print(player.name, 'is playing as', player.id)
+			print(player.name, 'is playing as', player.symbol)
 
 	def endMessage(self, board):
 		if self.winner(board):
 			print(self.currentPlayer.name, 'wins after', self.ply, 'turns.')
 		else:
 			print('The game is a tie after', self.ply, 'turns.')
-		print('i think fjfjfjfjfj' + str(self.players[0].age))
 
 	def legalMove(self, board, position):
 		coordinate = board.parseInput(position)

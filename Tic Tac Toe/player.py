@@ -1,15 +1,14 @@
 import traceback 
 
 class Player:
-	def __init__(self, name, id, age):
+	def __init__(self, name, symbol):
 		self.name = name
-		self.id = id
-		self.age = age
+		self.symbol = symbol
 
 	def getUserInput(self, board, game):
 		while True:
 			try:
-				position = int(input(self.name + ' (' + self.id + ') move: '))
+				position = int(input(self.name + ' (' + self.symbol + ') move: '))
 				if position not in [1,2,3,4,5,6,7,8,9]:
 					print("Invalid space. Enter a whole number from 1 to 9.")
 					continue
@@ -30,7 +29,6 @@ class Player:
 
 	def getMove(self, board, game):
 		position = self.getUserInput(board, game)
-		self.age += 1
 		return position
 
 	

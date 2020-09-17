@@ -9,9 +9,9 @@ class Board:
 	def display(self):
 		print(self.grid)
 
-	def move(self, playerid, position):
+	def move(self, player, position):
 			coordinate = self.parseInput(position)
-			self.grid[coordinate] = playerid #coordinate is (row, col)
+			self.grid[coordinate] = player.symbol #coordinate is (row, col)
 
 	def parseInput(self, position):
 		if position == 1:
