@@ -1,9 +1,10 @@
 import traceback 
 
 class Player:
-	def __init__(self, name, id):
+	def __init__(self, name, id, age):
 		self.name = name
 		self.id = id
+		self.age = age
 
 	def getUserInput(self, board, game):
 		while True:
@@ -29,6 +30,7 @@ class Player:
 
 	def getMove(self, board, game):
 		position = self.getUserInput(board, game)
+		self.age += 1
 		return position
 
 	

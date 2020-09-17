@@ -6,8 +6,11 @@ from player import Player
 
 board = Board()
 
-player1 = Player('Oliver', 'x')
-player2 = Player('Niko', 'o')
+player1 = Player('Oliver', 'x', 69)
+player2 = Player('Niko', 'o', 420)
+
+print('player1 id is: ')
+print(id(player1))
 
 players = [player1, player2]
 
@@ -23,3 +26,6 @@ while board.squareLeft():
 		break
 	game.switchPlayer()
 game.endMessage(board)
+
+for player in players:
+	print(player.age)

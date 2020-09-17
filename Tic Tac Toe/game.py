@@ -7,6 +7,9 @@ class Game:
 		self.playerCycle = cycle(self.players)
 		self.currentPlayer = next(self.playerCycle)
 
+		print('player1 id according to game self.players is: ')
+		print(id(self.players[0]))
+
 		self.startMessage()
 
 	def switchPlayer(self):
@@ -21,6 +24,7 @@ class Game:
 			print(self.currentPlayer.name, 'wins after', self.ply, 'turns.')
 		else:
 			print('The game is a tie after', self.ply, 'turns.')
+		print('i think fjfjfjfjfj' + str(self.players[0].age))
 
 	def legalMove(self, board, position):
 		coordinate = board.parseInput(position)
