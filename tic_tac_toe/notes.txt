@@ -24,7 +24,7 @@ use dictionary to associate player with id and name etc
 
 git rev-parse --show-toplevel
 
-
+add all known files git add -A (captial A)
 commit all known files: git commit -a
 
 what is git reset?
