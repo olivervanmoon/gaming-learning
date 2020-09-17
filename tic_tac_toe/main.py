@@ -11,15 +11,6 @@ player2 = Player('Niko', 'o')
 
 players = [player1, player2]
 
-game = Game(players)
+game = Game(board, players)
 
-board.display()
-while board.squareLeft():
-	position = game.currentPlayer.getMove(board, game)
-	board.move(game.currentPlayer, position)
-	game.ply += 1
-	board.display()
-	if game.winner(board):
-		break
-	game.switchPlayer()
-game.endMessage(board)
+game.play()
