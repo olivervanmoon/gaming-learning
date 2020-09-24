@@ -1,14 +1,14 @@
 import numpy as np
 
 class Board:
-	def __init__(self):
-		self.rows = 3
-		self.cols = 3
-		self.grid = np.empty((self.rows, self.cols), dtype=str)
+	def __init__(self, rows, cols):
+		self.rows = rows
+		self.cols = cols
+		self.grid = np.full((self.rows, self.cols), '', dtype=object)
 
 	def display(self):
 		print(self.grid)
-
+		
 	def move(self, player, position):
 			coordinate = self.parseInput(position)
 			self.grid[coordinate] = player.symbol #coordinate is (row, col)

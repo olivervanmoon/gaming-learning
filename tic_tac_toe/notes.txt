@@ -1,7 +1,6 @@
 Notes
 
 To do:
-put board in game
 make a log file
 make human and computer player subclasses
 
@@ -19,29 +18,25 @@ commit all known files: git commit -a
 
 traceback.print_stack()
 
+solved game = a game where outcome is predictable from any state based on players making perfect moves
+minimax = choose move that minimizes loss
+
+@property decorator helps make setter/getter functions with rules for objects
+
+itertools cycle
+
 To Check Out:
 what is git reset?
 python logging module
 python libraries for (game) machine learning, GANs
 game trees and minimax alg?
 static methods
+dictionaries
 
 
 Questions:
 do I want to use python error handling?
-
-Ideas:
-
-use @property to make board state a property in the Board class that players can access via getter/setter functions that check for a valid move and make the necessary modifications to the board.
-use itertools cycle for players
-use dictionary to associate player with id and name etc 
-
-
-
-
-
-
-
+if i put board in game, do I have to always be doing game.board?
 
 
 Connect 4:
