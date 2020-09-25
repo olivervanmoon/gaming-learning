@@ -54,7 +54,7 @@ class Game:
 	def play(self):
 		self.board.display()
 		while self.board.squareLeft():
-			position = self.currentPlayer.getMove(self)
+			position = self.currentPlayer.getValidMove(self)
 			self.board.move(self.currentPlayer, position)
 			self.ply += 1
 			self.board.display()
