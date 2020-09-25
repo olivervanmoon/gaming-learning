@@ -1,5 +1,7 @@
 Notes
 
+making a test edit
+
 To do:
 make a log file
 make human and computer player subclasses
