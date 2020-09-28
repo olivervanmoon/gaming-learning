@@ -1,12 +1,13 @@
 Notes
 
-making a test edit
-
 To do:
-make a log file
-make human and computer player subclasses
 
-implement computer players: perfect, learning
+implement computer players: stupid, perfect, learning
+
+actual n in a row checking
+
+make a log file
+
 
 
 
@@ -39,6 +40,7 @@ dictionaries
 Questions:
 do I want to use python error handling?
 if i put board in game, do I have to always be doing game.board?
+do you use github cli?
 
 
 Connect 4:
@@ -51,6 +53,9 @@ for player in players:
         check next 3 diag right
         check next 3 up
         check next 3 diag left
+
+
+
     
 
 

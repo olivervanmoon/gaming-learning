@@ -1,5 +1,5 @@
-import traceback 
 import numpy as np
+import random
 
 # base class. every child class must have a getMove(self, game)
 class Player:
@@ -7,38 +7,60 @@ class Player:
 		self.name = name
 		self.symbol = symbol
 
-	def getValidMove(self, game):
-		while True:
-			try:
-				print(self.name + ' (' + self.symbol + ') move:', end=' ')
-				position = self.getPosition(game)
-				if position not in [1,2,3,4,5,6,7,8,9]:
-					print("Invalid space. Enter a whole number from 1 to 9.")
-					continue
-				if game.legalMove(position):
-					break
-				else:
-					continue
-			except ValueError:
-				print('Invalid input. Try again.')
-				continue
-			except Exception as err:
-				print('You fucked up.')
-				print(type(err))
-				print(err)
-				traceback.print_stack()
-				continue
-		return position
-
 # human players get input from a keyboard
 class HumanPlayer(Player):
-	def getPosition(self, game):
-		position = int(input())#self.name + ' (' + self.symbol + ') move: '))
-		return position
+	def getCoordinate(self, game):
+		#coordinate = HumanPlayer.parseInput(input()) # for inputs with numbers 1-9
+		coordinate = tuple(int(x.strip()) for x in input('input: ').split(',')) # strip removes spaces # let me input coordinates in "computer mode"
+		return coordinate
 
-#random player will select a random space
-class StupidRandomPlayer(Player):
+	@staticmethod
+	def parseInput(position):
+		try:
+			position = int(position)
+		except Exception:
+			raise Exception('Invalid input. Enter a whole number form 1 to 9.')
+		if position not in [1,2,3,4,5,6,7,8,9]:
+			#print("Invalid space. Enter a whole number from 1 to 9.")
+			raise Exception("Invalid space. Enter a whole number from 1 to 9.")
+		if position == 1:
+			return (0,0)
+		if position == 2:
+			return (0,1)
+		if position == 3:
+			return (0,2)
+		if position == 4:
+			return (1,0)
+		if position == 5:
+			return (1,1)
+		if position == 6:
+			return (1,2)
+		if position == 7:
+			return (2,0)
+		if position == 8:
+			return (2,1)
+		if position == 9:
+			return (2,2)
+		else:
+			return False
+
+class StupidRandomPlayer(Player): #random player will select a random space without checking if it is allowed
 	def getPosition(self,game):
 		position = np.random.random_integers(1, 10) #low inclusive, high exclusive
 		print(position)
-		return position
+		coordinate = self.parseInput(position)
+		return coordinate
+
+class SmarterRandomPlayer(Player): # will select a random empty space
+	def getCoordinate(self, game):
+		grid = game.board.grid
+		possibilities = []
+		for row_ind, row in enumerate(grid):
+			for col_ind, square in enumerate(row):
+				if square == '':
+					possibilities.append((row_ind, col_ind))
+		coordinate = random.choice(possibilities)
+		print(coordinate)
+		return coordinate
+
+
