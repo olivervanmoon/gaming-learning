@@ -38,24 +38,6 @@ class Game:
 		else:
 			return True
 
-	def winner1(self): #original winner function, hard coded diagonals, returns symbol from square in the board
-		for i in range(self.board.rows):
-			if self.board.grid[i,0] == self.board.grid[i,1] == self.board.grid[i,2] != '':
-				winner = self.board.grid[i,0]
-				return winner
-		for i in range(self.board.cols):
-			if self.board.grid[0,i] == self.board.grid[1,i] == self.board.grid[2,i] != '':
-				winner = self.board.grid[0,i]
-				return winner
-		if self.board.grid[0,0] == self.board.grid[1,1] == self.board.grid[2,2] != '':
-			winner = self.board.grid[0,0]
-			return winner
-		if self.board.grid[0,2] == self.board.grid[1,1] == self.board.grid[2,0] != '':
-			winner = self.board.grid[0,2]
-			return winner
-		else:
-			return False
-
 	def winner(self):
 		
 		def nextincol():

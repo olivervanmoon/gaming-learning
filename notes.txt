@@ -2,9 +2,7 @@ Notes
 
 To do:
 
-implement computer players: stupid, perfect, learning
-
-actual n in a row checking
+implement computer players: random (done), perfect, learning
 
 make a log file
 
@@ -45,14 +43,6 @@ do you use github cli?
 
 Connect 4:
 Board 7 columns, 6 rows
-
-for player in players:
-    for square in board: (can optimize for not going to edge)
-        if color == square == square(col+1) == square(col+2) == square(col+3):
-            return color
-        check next 3 diag right
-        check next 3 up
-        check next 3 diag left
 
 
 

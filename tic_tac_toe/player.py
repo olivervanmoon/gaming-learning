@@ -44,14 +44,7 @@ class HumanPlayer(Player):
 		else:
 			return False
 
-class StupidRandomPlayer(Player): #random player will select a random space without checking if it is allowed
-	def getPosition(self,game):
-		position = np.random.random_integers(1, 10) #low inclusive, high exclusive
-		print(position)
-		coordinate = self.parseInput(position)
-		return coordinate
-
-class SmarterRandomPlayer(Player): # will select a random empty space
+class RandomPlayer(Player): # will select a random empty space
 	def getCoordinate(self, game):
 		grid = game.board.grid
 		possibilities = []

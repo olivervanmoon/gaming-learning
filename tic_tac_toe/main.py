@@ -3,16 +3,15 @@
 
 from game import Game
 from board import Board
-from player import HumanPlayer, StupidRandomPlayer, SmarterRandomPlayer
+from player import HumanPlayer, RandomPlayer
 
 board = Board(3,3) # rows, cols
 
-player1 = HumanPlayer('Oliver', 'o')
-#player2 = HumanPlayer('Niko', 'n')
-#player2 = StupidRandomPlayer('Rando', 'r')
-player2 = SmarterRandomPlayer('SmarterRando', 'r')
+oli = HumanPlayer('Oliver', 'o')
+niko = HumanPlayer('Niko', 'n')
+rando = RandomPlayer('Rando', 'r')
 
-players = [player1, player2]
+players = [oli, rando]
 
 game = Game(board, players, 3) # "n in a row"
 
