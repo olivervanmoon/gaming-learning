@@ -8,7 +8,7 @@ from player import HumanPlayer, RandomPlayer
 board = Board(3,3) # rows, cols
 
 oli = HumanPlayer('Oliver', 'o')
-niko = HumanPlayer('Niko', 'n')
+#niko = HumanPlayer('Niko', 'n')
 rando = RandomPlayer('Rando', 'r')
 
 players = [oli, rando]
